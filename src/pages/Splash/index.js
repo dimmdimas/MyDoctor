@@ -1,10 +1,11 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import { ILlogo } from '../../assets'
 
 const Splash = () => {
     return (
         <View style={styles.page}>
-            <ILlogo />
+            <ILlogo/>
             <Text style={styles.title}>My Doctor</Text>
         </View>
     )
