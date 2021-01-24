@@ -6,16 +6,23 @@ const Register = () => {
     return (
         <View>
             <Header/>
-            <Text></Text>
-            <Input label="Full Name"/>
-            <Input label="Pekerjaan" />
-            <Input label="Email" />
-            <Input label="Password" />
-            <Tombol title="Continue"/>
+            <View style={styles.content}>
+                <Text></Text>
+                <Input label="Full Name" />
+                <Input label="Pekerjaan" />
+                <Input label="Email" />
+                <Input label="Password" />
+                <Tombol title="Continue" />
+            </View>
         </View>
     )
 }
 
 export default Register
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    content: {
+        padding: 40,
+        paddingTop: 0
+    }
+})
