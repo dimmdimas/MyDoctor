@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native'
 const Splash = () => {
     return (
         <View style={styles.page}>
-            {/* <ILlogo /> */}
+            <ILlogo />
             <Text style={styles.title}>My Doctor</Text>
         </View>
     )
