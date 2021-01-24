@@ -1,15 +1,15 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 
-const Button = ({type, title}) => {
+const Tombol = ({ type, title, onPress}) => {
     return (
-        <View style={styles.container(type)}>
+        <TouchableOpacity style={styles.container(type)} onPress={onPress}>
             <Text style={styles.text(type)}>{title}</Text>
-        </View>
+        </TouchableOpacity>
     )
 }
 
-export default Button
+export default Tombol
 
 const styles = StyleSheet.create({
     container: (type) => ({
