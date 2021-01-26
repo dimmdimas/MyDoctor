@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import {  Splash, GetStarted, Register, Login, UploadPhoto, Doctor, Messages, Hospitals } from '../pages';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
