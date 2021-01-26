@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
-import { colors } from '../../../utils'
+import { colors, fonts } from '../../../utils'
 import IconOnly from './IconOnly'
 
 const Tombol = ({ type, title, onPress, icon}) => {
@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
         textAlign: 'center',
         color: type === 'secondary' ? '#112340' : colors.button.primary.text,
-        fontFamily: 'Nunito-SemiBold'
+        fontFamily: fonts.primary[600]
     })
 })
