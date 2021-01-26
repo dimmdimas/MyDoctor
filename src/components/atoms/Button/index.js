@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { colors } from '../../../utils'
 
 const Tombol = ({ type, title, onPress}) => {
     return (
@@ -13,7 +14,7 @@ export default Tombol
 
 const styles = StyleSheet.create({
     container: (type) => ({
-        backgroundColor: type === 'secondary' ? 'white' : '#0BCAD4',
+        backgroundColor: type === 'secondary' ? colors.button.primary.background : colors.button.primary.background,
         paddingVertical: 10,
         borderRadius: 10
     }),
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
         fontSize: 16, 
         fontWeight: '600',
         textAlign: 'center',
-        color: type === 'secondary' ? '#112340' : 'white',
+        color: type === 'secondary' ? '#112340' : colors.button.primary.text,
         fontFamily: 'Nunito-SemiBold'
     })
 })
