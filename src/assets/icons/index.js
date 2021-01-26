@@ -1,3 +1,3 @@
-import Back from './back.svg'
+import IconBackDark from './back.svg'
 
-export {Back}
+export { IconBackDark }
