@@ -1,18 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { DummyDoctor3 } from '../../assets';
-import { Header, ListDoctor } from '../../components';
+import { Header, List } from '../../components';
 import { colors } from '../../utils';
 
 const ChooseDoctor = ({ navigation }) => {
   return (
     <View style={styles.page}>
       <Header type="dark" title="Pilih Dokter Anda" onPress={() => navigation.goBack()} />
-      <ListDoctor onPress={() => navigation.navigate('Chatting')} type="next" profile={DummyDoctor3} name="Alexander" desc="Wanita" />
-      <ListDoctor onPress={() => navigation.navigate('Chatting')} type="next" profile={DummyDoctor3} name="Alexander" desc="Wanita" />
-      <ListDoctor onPress={() => navigation.navigate('Chatting')} type="next" profile={DummyDoctor3} name="Alexander" desc="Wanita" />
-      <ListDoctor onPress={() => navigation.navigate('Chatting')} type="next" profile={DummyDoctor3} name="Alexander" desc="Wanita" />
-      <ListDoctor onPress={() => navigation.navigate('Chatting')} type="next" profile={DummyDoctor3} name="Alexander" desc="Wanita" />
+      <List onPress={() => navigation.navigate('Chatting')} type="next" profile={DummyDoctor3} name="Alexander" desc="Wanita" />
+      <List onPress={() => navigation.navigate('Chatting')} type="next" profile={DummyDoctor3} name="Alexander" desc="Wanita" />
+      <List onPress={() => navigation.navigate('Chatting')} type="next" profile={DummyDoctor3} name="Alexander" desc="Wanita" />
+      <List onPress={() => navigation.navigate('Chatting')} type="next" profile={DummyDoctor3} name="Alexander" desc="Wanita" />
+      <List onPress={() => navigation.navigate('Chatting')} type="next" profile={DummyDoctor3} name="Alexander" desc="Wanita" />
     </View>
   );
 };
