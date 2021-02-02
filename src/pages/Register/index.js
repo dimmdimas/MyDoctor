@@ -1,13 +1,10 @@
 import React, {useState} from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {Gap, Header, Input, Tombol} from '../../components';
+import {Gap, Header, Input, Loading, Tombol} from '../../components';
 import {colors, useForm} from '../../utils';
+import {Fire} from '../../config'
 
 const Register = ({navigation}) => {
-  const [fullName, setfullName] = useState ('');
-  const [profession, setprofession] = useState ('');
-  const [email, setEmail] = useState ('');
-  const [password, setPassword] = useState ('');
 
   const [form, setForm] = useForm({
       fullName: '',
@@ -16,11 +13,25 @@ const Register = ({navigation}) => {
       password: ''
   })
 
+  const [loading, setLoading] = useState(false)
+
   const onContinue = () => {
     console.log (form);
+    setLoading(true);
+    Fire.auth().createUserWithEmailAndPassword(form.email, form.password)
+      .then((success) => {
+        setLoading(false)
+        console.log('register success: ', success)
+      })
+      .catch((error) => {
+        var errorMessage = error.message;
+        console.log('eror register: ', errorMessage)
+        setLoading(false)
+      });
     // navigation.navigate('UploadPhoto')
   };
   return (
+    <>
     <View style={styles.page}>
       <Header onPress={() => navigation.goBack ()} title="Daftar Akun" />
       <View style={styles.content}>
@@ -29,25 +40,25 @@ const Register = ({navigation}) => {
           <Input
             label="Full Name"
             value={form.fullName}
-            onChangeText={value => setForm (value)}
+            onChangeText={value => setForm ('fullName',value)}
           />
           <Gap height={24} />
           <Input
             label="Pekerjaan"
-            value={profession}
-            onChangeText={value => setprofession (value)}
+            value={form.profession}
+            onChangeText={value => setForm('profession',value)}
           />
           <Gap height={24} />
           <Input
             label="Email"
-            value={email}
-            onChangeText={value => setEmail (value)}
+            value={form.email}
+            onChangeText={value => setForm ('email',value)}
           />
           <Gap height={24} />
           <Input
             label="Password"
-            value={password}
-            onChangeText={value => setPassword (value)}
+            value={form.password}
+            onChangeText={value => setForm ('password',value)}
             secureTextEntry
           />
           <Gap height={40} />
@@ -55,6 +66,8 @@ const Register = ({navigation}) => {
         </ScrollView>
       </View>
     </View>
+      {loading && <Loading />}
+    </>
   );
 };
 
